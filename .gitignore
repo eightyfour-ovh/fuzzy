@@ -1,0 +1,12 @@
+# IDEs
+.idea/
+.vscode/
+
+# Composer/Project
+app/
+docker/
+public/
+var/
+vendor/
+
+# Misc
