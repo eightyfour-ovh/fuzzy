@@ -10,6 +10,7 @@ docker-compose.yml
 Dockerfile
 Makefile
 app/
+bin/
 docker/
 public/
 var/

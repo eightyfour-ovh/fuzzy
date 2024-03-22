@@ -155,6 +155,7 @@ class Kernel extends AbstractKernel implements KernelInterface, MicroKernelInter
 
         // @codeCoverageIgnoreStart
         if (!DotEnv::isTest()) {
+            // TODO: handle tests here
             $class = ControllerLauncher::handleDependencies(className: $routeClassName);
             // TODO: handle method parameters+request
             /** @var Result $result */

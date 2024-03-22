@@ -3,6 +3,7 @@
 namespace EightyfourTests\Benchmark;
 
 use Eightyfour\Configuration\Configurator;
+use Eightyfour\Core\Console\Application;
 use Eightyfour\Core\Core;
 use Eightyfour\Core\DotEnv;
 use Eightyfour\Core\Kernel;
@@ -11,15 +12,15 @@ use Eightyfour\Router\Router;
 use Eightyfour\Security\System;
 use PhpBench\Attributes as Bench;
 
-class FuzzyBench
+class CliBench
 {
-    #[Bench\Revs(revs: 1000)]
-    #[Bench\Iterations(iterations: 50)]
+    #[Bench\Revs(revs: 100)]
+    #[Bench\Iterations(iterations: 5)]
     #[Bench\Assert('mode(variant.time.avg) < 10 ms')]
     #[Bench\OutputTimeUnit(timeUnit: 'milliseconds', precision: 5)]
     #[Bench\OutputMode('throughput')]
     #[Bench\Groups(groups: ['index.php'])]
-    public function benchBoot(): void
+    public function benchBootAndRun(): void
     {
         // Pre-launcher for benchmarking
         $core = Core::boot();
@@ -28,8 +29,7 @@ class FuzzyBench
         $system = System::launch(
             core: $core,
             config: $config,
-            router: $router,
-            path: '/_fuzzy_tests'
+            router: $router
         );
 
         // Start the Kernel as a StdClass to inject a Route
@@ -43,6 +43,6 @@ class FuzzyBench
         );
 
         // Run the framework like `index.php`
-        $kernel->handle(request: Request::createFromGlobals())->terminate();
+        (new Application(args: ['bin/console'], kernel: $kernel))->run();
     }
 }
