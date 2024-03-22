@@ -2,7 +2,7 @@
     "name": "eightyfour/fuzzy",
     "version": "dev-0.0.1",
     "description": "Base PHP Framework",
-    "type": "project",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "App\\": "app/",
