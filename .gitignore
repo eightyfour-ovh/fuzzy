@@ -3,7 +3,12 @@
 .vscode/
 
 # Composer/Project
+.dockerignore
 .env.local
+composer-setup.sh
+docker-compose.yml
+Dockerfile
+Makefile
 app/
 docker/
 public/

@@ -5,6 +5,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
+            "App\\": "app/",
             "Eightyfour\\": "src/",
             "EightyfourTests\\": "tests/"
         }
@@ -22,8 +23,13 @@
         "overtrue/phplint": "^9.1"
     },
     "scripts": {
-        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon -vv",
+        "analysis": [
+            "@linter",
+            "@phpstan",
+            "@tests"
+        ],
         "linter": "vendor/bin/phplint --configuration=phplint.yml",
+        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon -vv",
         "tests": "vendor/bin/phpunit --coverage-html var/data/phpunit-coverage"
     }
 }
