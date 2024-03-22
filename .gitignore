@@ -3,6 +3,7 @@
 .vscode/
 
 # Composer/Project
+.env.local
 app/
 docker/
 public/

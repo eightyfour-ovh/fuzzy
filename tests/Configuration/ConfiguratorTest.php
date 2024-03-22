@@ -26,7 +26,7 @@ class ConfiguratorTest extends TestCase
 
         // Expects
         $this->assertIsArray(actual: $result);
-        $this->assertSame(expected: ['/app'], actual: $result);
+        $this->assertSame(expected: [realpath(path: __PROJECT__)], actual: $result);
     }
 
     public function testsGetSecurityBySection(): void

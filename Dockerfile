@@ -65,6 +65,6 @@ RUN \
     ln -s /etc/runit/php-fpm /s/php-fpm && chmod +x /etc/runit/php-fpm/run && \
     ln -s /etc/runit/nginx /s/nginx && chmod +x /etc/runit/nginx/run;
 
-WORKDIR /app
+WORKDIR /app/public
 
 CMD ["runsvdir", "-P", "/s"]

@@ -19,7 +19,7 @@ class UtilsTraitTest extends TestCase
         $result = $trait->getPath(path: 'tests/');
 
         // Expects
-        $this->assertSame(expected: '/app/tests', actual: $result);
+        $this->assertSame(expected: realpath(path: __PROJECT__ . 'tests'), actual: $result);
     }
 
     public function testsMerge(): void

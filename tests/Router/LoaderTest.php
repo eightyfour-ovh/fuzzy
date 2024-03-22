@@ -65,14 +65,14 @@ class LoaderTest extends TestCase
         // Expects
         $this->assertIsArray(actual: $result);
         $this->assertSame(expected: [
-            '/app/tests/Attribute/Config/Auth/ApiKeyTest.php',
-            '/app/tests/Attribute/Config/Auth/AuthenticatorTest.php',
-            '/app/tests/Attribute/Config/Auth/FieldsTest.php',
-            '/app/tests/Attribute/Config/Auth/ProviderTest.php',
-            '/app/tests/Attribute/Config/Auth/TokenTest.php',
-            '/app/tests/Attribute/Config/AuthenticationTest.php',
-            '/app/tests/Attribute/Config/RouterTest.php',
-            '/app/tests/Attribute/Config/SecurityTest.php',
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/Auth/ApiKeyTest.php'),
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/Auth/AuthenticatorTest.php'),
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/Auth/FieldsTest.php'),
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/Auth/ProviderTest.php'),
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/Auth/TokenTest.php'),
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/AuthenticationTest.php'),
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/RouterTest.php'),
+            realpath(path: __PROJECT__ . 'tests/Attribute/Config/SecurityTest.php'),
         ], actual: $result);
     }
 
