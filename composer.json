@@ -20,16 +20,19 @@
         "phpstan/phpstan": "^1.10",
         "phpstan/phpstan-phpunit": "^1.3",
         "phpunit/phpunit": "^11.0",
-        "overtrue/phplint": "^9.1"
+        "overtrue/phplint": "^9.1",
+        "phpbench/phpbench": "^1.2"
     },
     "scripts": {
         "analysis": [
             "@linter",
             "@phpstan",
-            "@tests"
+            "@tests",
+            "@benchmark"
         ],
         "linter": "vendor/bin/phplint --configuration=phplint.yml",
         "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon -vv",
-        "tests": "vendor/bin/phpunit --coverage-html var/data/phpunit-coverage"
+        "tests": "vendor/bin/phpunit --coverage-html var/data/phpunit-coverage",
+        "benchmark": "vendor/bin/phpbench run --report=default_report --output=fuzzy_html --retry-threshold=10"
     }
 }

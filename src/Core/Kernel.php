@@ -115,7 +115,7 @@ class Kernel extends AbstractKernel implements KernelInterface, MicroKernelInter
         return $this->system;
     }
 
-    #[Override] public function handle(Request $request): ?self
+    #[Override] public function handle(Request $request): self
     {
         if ($this->system?->getCurrent() === null) {
             // TODO: handle route not found
@@ -154,7 +154,7 @@ class Kernel extends AbstractKernel implements KernelInterface, MicroKernelInter
         }
 
         // @codeCoverageIgnoreStart
-        if ($this->getEnv() !== self::ENV[self::ENV_TEST]) {
+        if (!DotEnv::isTest()) {
             $class = ControllerLauncher::handleDependencies(className: $routeClassName);
             // TODO: handle method parameters+request
             /** @var Result $result */

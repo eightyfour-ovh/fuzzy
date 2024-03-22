@@ -176,7 +176,7 @@ class KernelTest extends TestCase
         $class->terminate();
 
         // Expects
-        $this->assertInstanceOf(expected: Response::class, actual: $result?->getResponse());
+        $this->assertInstanceOf(expected: Response::class, actual: $result->getResponse());
     }
 
     public function testsHandleWithRouteNotFound(): void

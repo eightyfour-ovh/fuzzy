@@ -20,7 +20,7 @@ class Request
     ) {
     }
 
-    public static function createFromGlobals(): ?self
+    public static function createFromGlobals(): self
     {
         $headers = null;
         // @codeCoverageIgnoreStart

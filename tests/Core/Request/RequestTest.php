@@ -15,7 +15,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getHeaders();
+        $result = $class->getHeaders();
 
         // Expects
         $this->assertNull(actual: $result);
@@ -27,7 +27,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getServer();
+        $result = $class->getServer();
 
         // Expects
         $this->assertIsArray(actual: $result);
@@ -39,7 +39,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getGet();
+        $result = $class->getGet();
 
         // Expects
         $this->assertNull(actual: $result);
@@ -51,7 +51,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getPost();
+        $result = $class->getPost();
 
         // Expects
         $this->assertNull(actual: $result);
@@ -63,7 +63,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getFiles();
+        $result = $class->getFiles();
 
         // Expects
         $this->assertNull(actual: $result);
@@ -75,7 +75,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getRequest();
+        $result = $class->getRequest();
 
         // Expects
         $this->assertNull(actual: $result);
@@ -87,7 +87,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getSession();
+        $result = $class->getSession();
 
         // Expects
         $this->assertNull(actual: $result);
@@ -99,7 +99,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getEnv();
+        $result = $class->getEnv();
 
         // Expects
         $this->assertIsArray(actual: $result);
@@ -111,7 +111,7 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class?->getCookie();
+        $result = $class->getCookie();
 
         // Expects
         $this->assertNull(actual: $result);
@@ -123,13 +123,13 @@ class RequestTest extends TestCase
         $class = $this->init();
 
         // When
-        $result = $class !== null ? $class::getRequestedUri() : '/';
+        $result = $class::getRequestedUri();
 
         // Expects
         $this->assertNull(actual: $result);
     }
 
-    private function init(): ?Request
+    private function init(): Request
     {
         return Request::createFromGlobals();
     }

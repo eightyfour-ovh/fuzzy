@@ -1,1 +1,1 @@
-# eightyfour-ovh/eightyfour
+# eightyfour/fuzzy
