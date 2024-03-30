@@ -18,7 +18,7 @@ class KernelBench
     #[Bench\Assert('mode(variant.time.avg) < 10 ms')]
     #[Bench\OutputTimeUnit(timeUnit: 'milliseconds', precision: 5)]
     #[Bench\OutputMode('throughput')]
-    #[Bench\Groups(groups: ['index.php'])]
+    #[Bench\Groups(groups: ['index.php', 'kernel'])]
     public function benchBootHandleAndTerminate(): void
     {
         // Pre-launcher for benchmarking

@@ -19,7 +19,7 @@ class CliBench
     #[Bench\Assert('mode(variant.time.avg) < 10 ms')]
     #[Bench\OutputTimeUnit(timeUnit: 'milliseconds', precision: 5)]
     #[Bench\OutputMode('throughput')]
-    #[Bench\Groups(groups: ['index.php'])]
+    #[Bench\Groups(groups: ['index.php', 'cli'])]
     public function benchBootAndRun(): void
     {
         // Pre-launcher for benchmarking

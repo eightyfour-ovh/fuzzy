@@ -3,6 +3,7 @@
     "version": "dev-0.0.1",
     "description": "Base PHP Framework",
     "type": "library",
+    "license": ["proprietary"],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
