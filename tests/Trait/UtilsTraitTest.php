@@ -7,7 +7,6 @@ use Eightyfour\Trait\UtilsTrait;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(className: UtilsTrait::class)]
 class UtilsTraitTest extends TestCase
 {
     public function testsGetPath(): void
