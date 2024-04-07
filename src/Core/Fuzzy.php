@@ -17,7 +17,7 @@ class Fuzzy
     {
         $creations = new Collection(array: []);
         for ($i = 0; $i < $instances; $i++) {
-            $creation = match (TypesEnum::getLabel(item: $type)){
+            $creation = match (TypesEnum::getLabel(item: $type)) {
                 TypesEnum::Neuron->value => $this->createNeuron(),
                 TypesEnum::Network->value => $this->createNetwork(),
                 TypesEnum::NeuralNetwork->value => $this->createNeuralNetwork(),
@@ -43,16 +43,16 @@ class Fuzzy
             ;
     }
 
-    private function createNeuron(): NeuralInterface
+    private function createNeuron(?string $type = null): NeuralInterface
     {
-        $neuron = new Neuron();
+        $neuron = new Neuron(type: $type);
 
         return $neuron;
     }
 
-    private function createNetwork(): NetworkInterface
+    private function createNetwork(?int $cnx = 2): NetworkInterface
     {
-        $network = new Network();
+        $network = new Network(cnx: $cnx);
 
         return $network;
     }

@@ -2,9 +2,7 @@
 
 namespace Eightyfour\Abstract;
 
-use Eightyfour\Collections\Collection;
 use Eightyfour\Core\Fuzzy;
-use Eightyfour\Fuzzy\Enum\TypesEnum;
 
 abstract class AbstractController
 {

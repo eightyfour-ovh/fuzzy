@@ -6,6 +6,10 @@ use Eightyfour\Fuzzy\Interface\NeuralInterface;
 
 abstract class AbstractNeuron implements NeuralInterface
 {
+    public function __construct(private ?string $type = null)
+    {
+    }
+
     public function retrieve(): void
     {
         // TODO: Implement retrieve() method.
@@ -34,5 +38,17 @@ abstract class AbstractNeuron implements NeuralInterface
     public function result(): void
     {
         // TODO: Implement result() method.
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
     }
 }

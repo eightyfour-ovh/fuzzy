@@ -15,4 +15,8 @@ interface NeuralInterface
     public function compare(): void;
 
     public function result(): void;
+
+    public function getType(): ?string;
+
+    public function setType(?string $type): self;
 }

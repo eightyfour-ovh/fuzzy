@@ -11,4 +11,8 @@ interface NetworkInterface
     public function switch(): void;
 
     public function disconnect(): void;
+
+    public function getCnx(): ?int;
+
+    public function setCnx(?int $cnx): self;
 }
