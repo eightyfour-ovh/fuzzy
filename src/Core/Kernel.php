@@ -14,10 +14,13 @@ use Eightyfour\Interface\KernelInterface;
 use Eightyfour\Interface\MicroKernelInterface;
 use Eightyfour\Router\Router;
 use Eightyfour\Security\System;
+use Eightyfour\Trait\MicroKernelTrait;
 use Override;
 
 class Kernel extends AbstractKernel implements KernelInterface, MicroKernelInterface
 {
+    use MicroKernelTrait;
+
     public const string ENV_DEV = 'dev';
     public const string ENV_PROD = 'prod';
     public const string ENV_TEST = 'test';

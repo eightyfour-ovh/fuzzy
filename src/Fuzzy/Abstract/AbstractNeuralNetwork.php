@@ -5,9 +5,9 @@ namespace Eightyfour\Fuzzy\Abstract;
 use Eightyfour\Collections\Collection;
 use Eightyfour\Fuzzy\Interface\NetworkInterface;
 use Eightyfour\Fuzzy\Interface\NeuralInterface;
-use Eightyfour\Fuzzy\Interface\NeuralNetworkInterface;
+use Eightyfour\Fuzzy\Interface\NeuralNetworkInterface as Nni;
 
-abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
+abstract class AbstractNeuralNetwork implements Nni
 {
     private NeuralInterface $neuron;
     private NetworkInterface $network;
@@ -20,7 +20,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         $this->networks = new Collection(array: []);
     }
 
-    public function create(NeuralInterface $neuron, NetworkInterface $network): self
+    public function create(NeuralInterface $neuron, NetworkInterface $network): Nni
     {
         return $this
             ->setNeuron(neuron: $neuron)
@@ -28,7 +28,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         ;
     }
 
-    public function mergeNeurons(NeuralInterface $neu1, NeuralInterface $neu2): self
+    public function mergeNeurons(NeuralInterface $neu1, NeuralInterface $neu2): Nni
     {
         if ($this->neurons === null) {
             $this->neurons = new Collection(array: []);
@@ -42,7 +42,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         return $this;
     }
 
-    public function mergeNetworks(NetworkInterface $net1, NetworkInterface $net2): self
+    public function mergeNetworks(NetworkInterface $net1, NetworkInterface $net2): Nni
     {
         if ($this->networks === null) {
             $this->networks = new Collection(array: []);
@@ -56,7 +56,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         return $this;
     }
 
-    public function merge(NeuralNetworkInterface $nn1, NeuralNetworkInterface $nn2): self
+    public function merge(Nni $nn1, Nni $nn2): Nni
     {
         return $this
             ->mergeNeurons(
@@ -70,42 +70,42 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         ;
     }
 
-    public function start(): self
+    public function start(): Nni
     {
         // TODO: Implement start() method.
 
         return $this;
     }
 
-    public function parallelism(): self
+    public function parallelism(): Nni
     {
         // TODO: Implement parallelism() method.
 
         return $this;
     }
 
-    public function run(): self
+    public function run(): Nni
     {
         // TODO: Implement run() method.
 
         return $this;
     }
 
-    public function feed(): self
+    public function feed(): Nni
     {
         // TODO: Implement feed() method.
 
         return $this;
     }
 
-    public function spread(): self
+    public function spread(): Nni
     {
         // TODO: Implement spread() method.
 
         return $this;
     }
 
-    public function stop(): self
+    public function stop(): Nni
     {
         // TODO: Implement stop() method.
 
@@ -122,7 +122,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         return $this->neurons?->getArrayCopy();
     }
 
-    public function addNeuron(NeuralInterface $neuron): self
+    public function addNeuron(NeuralInterface $neuron): Nni
     {
         $this->neurons?->add(element: $neuron);
 
@@ -134,7 +134,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         return $this->networks?->getArrayCopy();
     }
 
-    public function addNetwork(NetworkInterface $network): self
+    public function addNetwork(NetworkInterface $network): Nni
     {
         $this->networks?->add(element: $network);
 
@@ -146,7 +146,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         return $this->neuron;
     }
 
-    public function setNeuron(NeuralInterface $neuron): self
+    public function setNeuron(NeuralInterface $neuron): Nni
     {
         $this->neuron = $neuron;
 
@@ -158,7 +158,7 @@ abstract class AbstractNeuralNetwork implements NeuralNetworkInterface
         return $this->network;
     }
 
-    public function setNetwork(NetworkInterface $network): self
+    public function setNetwork(NetworkInterface $network): Nni
     {
         $this->network = $network;
 

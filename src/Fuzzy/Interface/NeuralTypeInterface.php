@@ -4,7 +4,7 @@ namespace Eightyfour\Fuzzy\Interface;
 
 use Eightyfour\Fuzzy\Enum\NeuralTypesEnum;
 
-interface NeuralInterface extends NeuralTypeInterface
+interface NeuralTypeInterface
 {
     public function analyze(mixed $data): self;
 
@@ -15,10 +15,4 @@ interface NeuralInterface extends NeuralTypeInterface
     public function assume(mixed $c): self;
 
     public function getType(): NeuralTypesEnum;
-
-    public function retrieve(): self;
-
-    public function result(): self;
-
-    public function setType(?string $type): ?NeuralTypesEnum;
 }

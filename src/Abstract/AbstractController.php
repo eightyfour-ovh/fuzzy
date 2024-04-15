@@ -2,17 +2,9 @@
 
 namespace Eightyfour\Abstract;
 
-use Eightyfour\Core\Fuzzy;
+use Eightyfour\Trait\AiTrait;
 
 abstract class AbstractController
 {
-    public function __construct(
-        protected Fuzzy $fuzzy
-    ) {
-    }
-
-    public function getFuzzy(): Fuzzy
-    {
-        return $this->fuzzy;
-    }
+    use AiTrait;
 }
